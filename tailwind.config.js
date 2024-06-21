@@ -4,7 +4,14 @@ export default {
   "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      fontFamily:{sans: ['Poppins', 'sans-serif']}
+      fontFamily:{sans: ['Poppins', 'sans-serif']},
+      colors:{
+        'white': '#ffffff',
+        'gray': '#878787',
+        'black': '#101216',
+        'black-card': '#191A23'
+
+      }
     },
   },
   plugins: [],
