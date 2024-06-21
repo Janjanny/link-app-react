@@ -3,10 +3,10 @@ import React from "react";
 const Navbar = () => {
   return (
     <div className="w-full bg-black text-white py-3 border-b border-gray border-solid">
-      <nav className="flex w-11/12 mx-auto justify-between items-center py-3">
+      <nav className="flex w-11/12 mx-auto justify-between items-center py-2">
         <h1 className=" font-bold text-3xl">Links</h1>
         <div className="flex gap-3">
-          <div className="flex border-solid border border-gray py-2 px-4 text-sm rounded-2xl">
+          <div className="flex border-solid border border-gray py-2 px-4 text-sm rounded-3xl">
             <input
               type="text"
               className=" bg-black focus:outline-none outline-1 text-start w-[180px]"
