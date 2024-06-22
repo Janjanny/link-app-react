@@ -21,7 +21,9 @@ const Card = () => {
     ]
 
   return (
-    <div>Card</div>
+    <div className=' bg-black-card w-full h-full'>
+        <div className="link-icon"></div>
+    </div>
   )
 }
 
