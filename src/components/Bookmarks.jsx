@@ -1,8 +1,12 @@
 import React from 'react'
+import Card from './Card'
 
 const Bookmarks = () => {
   return (
-    <div>Bookmarks</div>
+    <div className=' w-11/12 mx-auto my-5'>
+      <Card/>
+
+    </div>
   )
 }
 

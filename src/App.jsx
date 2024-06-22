@@ -9,6 +9,7 @@ function App() {
       <Navbar />
       <main className=" w-full min-h-screen mx-auto bg-black">
         <Categories />
+        
         <Bookmarks />
         New Button
       </main>
