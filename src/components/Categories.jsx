@@ -11,7 +11,7 @@ const Categories = () => {
   return <>
     <div className="flex gap-12 w-11/12 mx-auto py-8 text-base">
       {categoryList.map((category, index) => (
-        <p key={index} className={`cursor-pointer ${index === active ? 'text-white' : 'text-gray'}`} onClick={() => {changeCategory(index)}}>{category}</p>
+        <p key={index} className={`cursor-pointer ${index === active ? 'text-white transition-all ease-in-out' : 'text-gray hover:text-gray-hover transition-all ease-in'}`} onClick={() => {changeCategory(index)}}>{category}</p>
       ))}
     </div>
   </>;

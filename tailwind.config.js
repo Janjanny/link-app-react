@@ -9,7 +9,8 @@ export default {
         'white': '#ffffff',
         'gray': '#878787',
         'black': '#101216',
-        'black-card': '#191A23'
+        'black-card': '#191A23',
+        'gray-hover' : '#ADADAD'
 
       }
     },
