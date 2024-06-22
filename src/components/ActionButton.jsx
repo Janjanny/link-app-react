@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
+import LinkModal from './LinkModal'
 
 const ActionButton = () => {
     const [isActive, setActive] = useState(false)
+    const [openLinkModal, setOpenLinkModal] = useState(false)
 
     const buttonClicked = () => {
         setActive(!isActive);
@@ -31,6 +33,9 @@ const ActionButton = () => {
 
 </div>
     </> }
+
+    <LinkModal isActive={''} buttonClicked={''}/>
+
     </>
   )
 }
