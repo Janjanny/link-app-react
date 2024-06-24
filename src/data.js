@@ -43,9 +43,9 @@ export function getCategories() {
 }
 
 // fetching API
-async function metaDataRetrieve(url) {
+async function metaDataRetrieve(link) {
     const apiKey = "8e3715ba4067d7eabaaa4d7441f04f84";
-    const apiUrl =`https://api.linkpreview.net/?key=${apiKey}?&=${encodeURIComponent(url)}`
+    const apiUrl =`https://api.linkpreview.net/?key=${apiKey}&q=${encodeURIComponent(link)}`
 
     try {
         const response = await fetch(apiUrl);
@@ -53,9 +53,10 @@ async function metaDataRetrieve(url) {
 
         const title = data.title || 'No title available';
         const description = data.description || 'No description available';
-        const icon = data.image || '/favicon.ico';
+        const image = data.image || '/favicon.ico';
+        const url = link;
 
-        return { title, description, icon };
+        return { title, description, image, url };
     }
 
     catch (err) {
@@ -64,13 +65,27 @@ async function metaDataRetrieve(url) {
     }
 }
 
+const newBookmark = metaDataRetrieve('https://google.com')
+
+console.log(newBookmark);
+
 // function for adding data 
-export function addBookmark(bookmark) {
-    // need to use LinkPreview
+export async function addBookmark(link) {
+
+    const {title, description, image, url } = await metaDataRetrieve(link);
+
+    const newBookmark = {
+        title: title,
+        description: description,
+        image: image,
+        url: url
+    }
+    
     const bookmarks = getBookmarks();
-    bookmarks.push(bookmark);
+    bookmarks.push(newBookmark);
     localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
 }
+
 
 export function addCategory(category) {
     const categories = getCategories();
