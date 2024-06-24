@@ -1,3 +1,4 @@
+import Card from "./components/Card";
 
 
 const initialBookmarks = [ 
@@ -39,6 +40,28 @@ export function getBookmarks() {
 
 export function getCategories() {
     return JSON.parse(localStorage.getItem('categories') || [])
+}
+
+// fetching API
+async function metaDataRetrieve(url) {
+    const apiKey = "8e3715ba4067d7eabaaa4d7441f04f84";
+    const apiUrl =`https://api.linkpreview.net/?key=${apiKey}?&=${encodeURIComponent(url)}`
+
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+
+        const title = data.title || 'No title available';
+        const description = data.description || 'No description available';
+        const icon = data.image || '/favicon.ico';
+
+        return { title, description, icon };
+    }
+
+    catch (err) {
+        console.error('Error fetching metadata: ', err);
+        return { title: 'No title available', description: 'No description available', icon: '/favicon.ico' };
+    }
 }
 
 // function for adding data 
