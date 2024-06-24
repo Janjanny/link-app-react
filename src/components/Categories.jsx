@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import {categoryList} from "../data";
+import { getCategories } from "../data";
+
 
 const Categories = () => {
-
-  console.log(categoryList)
+  const categoryList = getCategories()
 
   const[active, setActive] = useState(0);
 

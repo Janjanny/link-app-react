@@ -61,5 +61,3 @@ export function removeCategory(index) {
     localStorage.setItem('categories', JSON.stringify(categories))
 }
 
-
-export {bookmarks, categoryList};
