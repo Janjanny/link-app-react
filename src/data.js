@@ -1,3 +1,5 @@
+
+
 const initialBookmarks = [ 
     {
         title: "Facebook",
@@ -41,6 +43,7 @@ export function getCategories() {
 
 // function for adding data 
 export function addBookmark(bookmark) {
+    // need to use LinkPreview
     const bookmarks = getBookmarks();
     bookmarks.push(bookmark);
     localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
