@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import LinkModal from './LinkModal'
 import CategoryModal from './CategoryModal'
+import { addBookmark } from '../data'
 
 const ActionButton = () => {
     const [isActive, setActive] = useState(false)

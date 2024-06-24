@@ -10,7 +10,7 @@ const initialBookmarks = [
     desc: 'Share your videos with friends, family, and the world.'},
 
     {
-    name: 'Youtube', 
+    name: 'Twitter', 
     link: 'https://www.twitter.com/?lang=en', 
     desc: 'From breaking news and entertainment to sports and politics, get the full story with all the live commentary.'},
 ]
@@ -60,4 +60,7 @@ export function removeCategory(index) {
     categories.splice(index, 1);
     localStorage.setItem('categories', JSON.stringify(categories))
 }
+
+// localStorage.removeItem('bookmarks');
+// localStorage.removeItem('categories');
 
