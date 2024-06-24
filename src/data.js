@@ -64,3 +64,5 @@ export function removeCategory(index) {
 // localStorage.removeItem('bookmarks');
 // localStorage.removeItem('categories');
 
+
+
