@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import {categoryList} from "../data";
 
 const Categories = () => {
-  const categoryList = ["All", "Socials", "Personal", "Education", "Shopping", "Games", "Music"];
+
+  console.log(categoryList)
 
   const[active, setActive] = useState(0);
 
