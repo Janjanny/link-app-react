@@ -13,6 +13,17 @@ function App() {
   const [openLinkModal, setOpenLinkModal] = useState(false)
   const [openCtgryModal, setOpenCtgryModal] = useState(false);
 
+  // check if url valid
+  const isValidUrl = (url) => {
+    try {
+      new URL(url);
+      return true;
+    }catch(_) {
+      return false;
+    }
+
+  }
+
   // fetch bookmark states
   const [bookmarks, setBookmarks] = useState(getBookmarks())
 
@@ -21,8 +32,13 @@ function App() {
   }
 
   const handleAddBookmark = async (url) => {
-    await addBookmark(url);
-    updateBookmark()
+    if (isValidUrl(url)) {
+      await addBookmark(url);
+      updateBookmark()
+    }
+    else {
+      console.log("Invalid URL")
+    }
 
 
   }

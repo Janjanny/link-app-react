@@ -2,7 +2,6 @@ import React from 'react'
 
 
 const Card = ({name, desc, link, img}) => {
-  console.log(img)
     
 
   return (

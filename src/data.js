@@ -64,9 +64,9 @@ async function metaDataRetrieve(link) {
     }
 }
 
-const newBookmark = metaDataRetrieve('https://google.com')
+// const newBookmark = metaDataRetrieve('https://google.com')
 
-console.log(newBookmark);
+// console.log(newBookmark);
 
 // function for adding data 
 export async function addBookmark(link) {
