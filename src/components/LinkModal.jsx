@@ -3,7 +3,7 @@ import { addBookmark } from '../data'
 import { getCategories } from '../data';
 import { useState } from 'react';
 
-const LinkModal = ({isActive, setActive}) => {
+const LinkModal = ({isActive, setActive, updateBookmark}) => {
   const categories = getCategories()
   categories.splice(0,1)
   const [url, setUrl] = useState('');

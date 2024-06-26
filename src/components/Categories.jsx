@@ -7,6 +7,7 @@ const Categories = () => {
 
   const[active, setActive] = useState(0);
 
+  // for navigation in category
   const changeCategory = (index) => {
     setActive(index)
   }

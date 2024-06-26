@@ -3,10 +3,8 @@ import LinkModal from './LinkModal'
 import CategoryModal from './CategoryModal'
 import { addBookmark } from '../data'
 
-const ActionButton = () => {
-    const [isActive, setActive] = useState(false)
-    const [openLinkModal, setOpenLinkModal] = useState(false)
-    const [openCtgryModal, setOpenCtgryModal] = useState(false);
+const ActionButton = ({isActive, setActive, openLinkModal, setOpenLinkModal, openCtgryModal, setOpenCtgryModal}) => {
+
 
     const buttonClicked = () => {
         setActive(!isActive);
