@@ -1,0 +1,5 @@
+- add delete function
+- add url validation for no title available
+
+- refactor addBookmark function to include category in object
+- add filter function
