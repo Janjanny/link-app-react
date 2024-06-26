@@ -12,13 +12,16 @@ function App() {
   const [isActive, setActive] = useState(false)
   const [openLinkModal, setOpenLinkModal] = useState(false)
   const [openCtgryModal, setOpenCtgryModal] = useState(false);
+  const [notification, setNotification] = useState("Test");
 
   // check if url valid
   const isValidUrl = (url) => {
     try {
       new URL(url);
+      
       return true;
     }catch(_) {
+      
       return false;
     }
 
@@ -35,9 +38,12 @@ function App() {
     if (isValidUrl(url)) {
       await addBookmark(url);
       updateBookmark()
+      
+      setNotification("Bookmark added successfully!")
     }
     else {
-      console.log("Invalid URL")
+      
+      setNotification("Invalid URL. Please enter a valid URL")
     }
 
 
@@ -49,7 +55,7 @@ function App() {
       <Navbar />
       <main className=" w-full min-h-screen mx-auto bg-black">
         <Categories />
-        
+        {notification && <div className="notification">{notification}</div>}
         <Bookmarks bookmarks={bookmarks} setBookmarks={setBookmarks} />
         <ActionButton isActive={isActive} setActive={setActive} openLinkModal={openLinkModal} setOpenLinkModal={setOpenLinkModal} openCtgryModal={openCtgryModal} setOpenCtgryModal={setOpenCtgryModal} handleAddBookmark={handleAddBookmark}/>
       </main>
