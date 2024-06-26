@@ -79,6 +79,10 @@ export async function addBookmark(link) {
         image: image,
         url: url
     }
+
+    // if (newBookmark.title == "No title available") {
+
+    // }
     
     const bookmarks = getBookmarks();
     bookmarks.push(newBookmark);
