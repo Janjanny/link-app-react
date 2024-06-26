@@ -11,7 +11,7 @@ const Bookmarks = ({bookmarks, setBookmarks}) => {
   console.log(localStorage.getItem('bookmarks'))
 
   return (
-    <div className='w-11/12 mx-auto my-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 col-auto gap-4'>
+    <div className='w-11/12 mx-auto mt-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 col-auto gap-4 pb-[12rem]'>
       {filteredBookmarks.map((bookmark, index) => (<Card name={bookmark.title} desc={bookmark.description} link={bookmark.url} img={bookmark.image} key={index}/>) )}
     </div>
   )
