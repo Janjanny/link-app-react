@@ -3,15 +3,16 @@ import { addBookmark } from '../data'
 import { getCategories } from '../data';
 import { useState } from 'react';
 
-const LinkModal = ({isActive, setActive, updateBookmark}) => {
+const LinkModal = ({isActive, setActive, handleAddBookMark}) => {
   const categories = getCategories()
   categories.splice(0,1)
   const [url, setUrl] = useState('');
   const [category, setCategory] = useState(categories[0]);
 
-  const handleSubmit = async (event) => {
-    await addBookmark(url); // Call addBookmark with the URL and category
+  const handleSubmit = async () => {
+    await handleAddBookMark(url); // Call addBookmark with the URL and category
     setActive(!isActive); // Close the modal
+    
   };
   
 

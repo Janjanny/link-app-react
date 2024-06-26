@@ -3,7 +3,7 @@ import Bookmarks from "./components/Bookmarks";
 import Categories from "./components/Categories";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import { getBookmarks } from "./data";
+import { getBookmarks, addBookmark } from "./data";
 import { useState } from "react";
 
 
@@ -20,6 +20,13 @@ function App() {
     setBookmarks(getBookmarks())
   }
 
+  const handleAddBookmark = async (url) => {
+    await addBookmark(url);
+    updateBookmark()
+
+
+  }
+
 
   return (
     <>
@@ -28,7 +35,7 @@ function App() {
         <Categories />
         
         <Bookmarks bookmarks={bookmarks} setBookmarks={setBookmarks} />
-        <ActionButton isActive={isActive} setActive={setActive} openLinkModal={openLinkModal} setOpenLinkModal={setOpenLinkModal} openCtgryModal={openCtgryModal} setOpenCtgryModal={setOpenCtgryModal}/>
+        <ActionButton isActive={isActive} setActive={setActive} openLinkModal={openLinkModal} setOpenLinkModal={setOpenLinkModal} openCtgryModal={openCtgryModal} setOpenCtgryModal={setOpenCtgryModal} handleAddBookmark={handleAddBookmark}/>
       </main>
       <Footer />
     </>

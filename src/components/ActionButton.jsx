@@ -3,7 +3,7 @@ import LinkModal from './LinkModal'
 import CategoryModal from './CategoryModal'
 import { addBookmark } from '../data'
 
-const ActionButton = ({isActive, setActive, openLinkModal, setOpenLinkModal, openCtgryModal, setOpenCtgryModal}) => {
+const ActionButton = ({isActive, setActive, openLinkModal, setOpenLinkModal, openCtgryModal, setOpenCtgryModal, handleAddBookmark}) => {
 
 
     const buttonClicked = () => {
@@ -35,8 +35,8 @@ const ActionButton = ({isActive, setActive, openLinkModal, setOpenLinkModal, ope
 </div>
     </> }
 
-    {openLinkModal && <LinkModal isActive={openLinkModal} setActive={setOpenLinkModal}/>}
-    {openCtgryModal && <CategoryModal isActive={openCtgryModal} setActive={setOpenCtgryModal}/>}
+    {openLinkModal && <LinkModal isActive={openLinkModal} setActive={setOpenLinkModal} handleAddBookMark={handleAddBookmark}/>}
+    {openCtgryModal && <CategoryModal isActive={openCtgryModal} setActive={setOpenCtgryModal} />}
 
     </>
   )
