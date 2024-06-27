@@ -1,4 +1,4 @@
-- add delete function // done
+
 - add url validation for no title available
 - fix the notification window the blur bg
 
