@@ -54,14 +54,17 @@ function App() {
 
   // function for deleting bookmarks 
   const deleteBookmark = (index) => {
-    const newBookmarks = bookmarks.filter((_, i) => {i !== index});
+    const newBookmarks = bookmarks.filter((_, i) => i !== index);
+
+    // console.log("newBookmarks", newBookmarks);
 
     localStorage.setItem('bookmarks', JSON.stringify(newBookmarks));
 
     updateBookmark();
-    console.log(index);
-    console.log("bookmarks", bookmarks);
-    console.log("newBookmarks", newBookmarks);
+    
+    // console.log(index);
+    // console.log("bookmarks", bookmarks);
+    
   }
 
 

@@ -43,11 +43,14 @@ export function getCategories() {
 
 // fetching API
 async function metaDataRetrieve(link) {
+    const maxAttempt = 3;
     const apiKey = "8e3715ba4067d7eabaaa4d7441f04f84";
     const apiUrl =`https://api.linkpreview.net/?key=${apiKey}&q=${encodeURIComponent(link)}`
 
     try {
         const response = await fetch(apiUrl);
+        
+        
         const data = await response.json();
 
         const title = data.title || 'No title available';
