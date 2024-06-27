@@ -5,19 +5,22 @@ const initialBookmarks = [
         title: "Facebook",
         description: "Connect with friends, family and other people you know. Share photos and videos, send messages and get updates.",
         image: "https://www.facebook.com/images/fb_icon_325x325.png",
-        url: "https://www.facebook.com/"
+        url: "https://www.facebook.com/",
+        category: "Socials"
     },
     {
         title: "Youtube",
         description: "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
         image: "https://www.youtube.com/yts/img/yt_1200-vflhSIVnY.png",
-        url: "https://www.youtube.com/"
+        url: "https://www.youtube.com/",
+        category: 'Entertainment'
     },
     {
         title: "Google",
         description: "Search the world's information, including webpages, images, videos and more. Google has many special features to help you find exactly what you're looking for.",
         image: "https://www.google.com/images/branding/googlelogo/1x/googlelogo_white_background_color_272x92dp.png",
-        url: "https://www.google.com/"
+        url: "https://www.google.com/",
+        category: "Education"
     }
 ]
 
@@ -42,7 +45,7 @@ export function getCategories() {
 }
 
 // fetching API
-async function metaDataRetrieve(link) {
+async function metaDataRetrieve(link, linkCategory) {
     const maxAttempt = 3;
     const apiKey = "8e3715ba4067d7eabaaa4d7441f04f84";
     const apiUrl =`https://api.linkpreview.net/?key=${apiKey}&q=${encodeURIComponent(link)}`
@@ -57,8 +60,9 @@ async function metaDataRetrieve(link) {
         const description = data.description || 'No description available';
         const image = data.image || '/favicon.ico';
         const url = link;
+        const category = linkCategory
 
-        return { title, description, image, url };
+        return { title, description, image, url, category };
     }
 
     catch (err) {
@@ -72,15 +76,16 @@ async function metaDataRetrieve(link) {
 // console.log(newBookmark);
 
 // function for adding data 
-export async function addBookmark(link) {
+export async function addBookmark(link, category) {
 
-    const {title, description, image, url } = await metaDataRetrieve(link);
+    const {title, description, image, url, category } = await metaDataRetrieve(link, category);
 
     const newBookmark = {
         title: title,
         description: description,
         image: image,
-        url: url
+        url: url,
+        category: category,
     }
 
     // if (newBookmark.title == "No title available") {

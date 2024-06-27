@@ -36,9 +36,9 @@ function App() {
     setBookmarks(getBookmarks())
   }
 
-  const handleAddBookmark = async (url) => {
+  const handleAddBookmark = async (url, category) => {
     if (isValidUrl(url)) {
-      await addBookmark(url);
+      await addBookmark(url, category);
       updateBookmark()
       
       setNotification("Bookmark added successfully!")

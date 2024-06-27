@@ -10,7 +10,7 @@ const LinkModal = ({isActive, setActive, handleAddBookMark}) => {
   const [category, setCategory] = useState(categories[0]);
 
   const handleSubmit = async () => {
-    await handleAddBookMark(url); // Call addBookmark with the URL and category
+    await handleAddBookMark(url, category); // Call addBookmark with the URL and category
     setActive(!isActive); // Close the modal
     
   };
