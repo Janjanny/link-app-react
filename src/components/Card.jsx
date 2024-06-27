@@ -1,13 +1,13 @@
 import React from 'react'
 
 
-const Card = ({name, desc, link, img}) => {
+const Card = ({name, desc, link, img, deleteBookmark, index}) => {
     
 
   return (
     <>
         <div className=' bg-black-card w-full text-white min-h-[18rem] p-6 rounded-lg relative'>
-          <div className="delete-icon absolute right-[1.5rem]">
+          <div className="delete-icon absolute right-[1.5rem]" onClick={() => deleteBookmark(index)}>
 
           
 

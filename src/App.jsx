@@ -29,7 +29,7 @@ function App() {
 
   }
 
-  // fetch bookmark states
+  // handle bookmark states
   const [bookmarks, setBookmarks] = useState(getBookmarks())
 
   const updateBookmark = () => {
@@ -50,9 +50,16 @@ function App() {
       setNotifActive(true)
 
     }
-
-
   }
+
+  // function for deleting bookmarks 
+  const deleteBookmark = (index) => {
+    const newBookmarks = bookmarks.filter((_, i) => {i !== index})
+    setBookmarks(newBookmarks);
+    localStorage.setItem('bookmarks', JSON.stringify(newBookmarks))
+  }
+
+
 
 
   return (
@@ -61,7 +68,7 @@ function App() {
       <main className=" w-full min-h-screen mx-auto bg-black">
         <Categories />
         {isNotifActive && <Notification notificationMessage={notification} setNotifActive={setNotifActive}/>}
-        <Bookmarks bookmarks={bookmarks} setBookmarks={setBookmarks} />
+        <Bookmarks bookmarks={bookmarks} setBookmarks={setBookmarks} deleteBookmark={deleteBookmark} />
         <ActionButton isActive={isActive} setActive={setActive} openLinkModal={openLinkModal} setOpenLinkModal={setOpenLinkModal} openCtgryModal={openCtgryModal} setOpenCtgryModal={setOpenCtgryModal} handleAddBookmark={handleAddBookmark}/>
       </main>
       <Footer />
