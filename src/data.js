@@ -113,4 +113,9 @@ export function removeCategory(index) {
 // localStorage.removeItem('categories');
 
 
-
+//for testing, reset function
+export const resetData = () => {
+    localStorage.removeItem('bookmarks');
+    localStorage.removeItem('categories');
+    window.location.reload()
+}

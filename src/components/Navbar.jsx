@@ -1,10 +1,13 @@
 import React from "react";
+import { resetData } from "../data";
 
 const Navbar = () => {
   return (
     <div className="w-full bg-black text-white py-3 border-b border-gray border-solid">
       <nav className="flex w-11/12 mx-auto justify-between items-center py-1">
         <a href="/" className=" font-bold text-3xl">Links</a>
+
+        <button onClick={() => resetData()}>reset</button>
         <div className="flex gap-3">
           <div className="flex border-solid border border-gray py-2 px-4 text-sm rounded-3xl">
             <input

@@ -54,10 +54,22 @@ function App() {
 
   // function for deleting bookmarks 
   const deleteBookmark = (index) => {
-    const newBookmarks = bookmarks.filter((_, i) => {i !== index})
-    setBookmarks(newBookmarks);
-    localStorage.setItem('bookmarks', JSON.stringify(newBookmarks))
+    const newBookmarks = bookmarks.filter((_, i) => {i !== index});
+
+    localStorage.setItem('bookmarks', JSON.stringify(newBookmarks));
+
+    updateBookmark();
+    console.log(index);
+    console.log("bookmarks", bookmarks);
+    console.log("newBookmarks", newBookmarks);
   }
+
+
+  // const sample = [1,2,3,4,5];
+  // const filteredSample = sample.filter((_, i) => i !== 2);
+  // console.log(filteredSample)
+
+  // console.log(localStorage.getItem('bookmark'))
 
 
 

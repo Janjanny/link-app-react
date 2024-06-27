@@ -7,7 +7,7 @@ const Card = ({name, desc, link, img, deleteBookmark, index}) => {
   return (
     <>
         <div className=' bg-black-card w-full text-white min-h-[18rem] p-6 rounded-lg relative'>
-          <div className="delete-icon absolute right-[1.5rem]" onClick={() => deleteBookmark(index)}>
+          <button className="delete-icon absolute right-[1.5rem]" onClick={() => deleteBookmark(index)}>
 
           
 
@@ -15,7 +15,7 @@ const Card = ({name, desc, link, img, deleteBookmark, index}) => {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
                 </svg>
 
-          </div>
+          </button>
             <div className="link-icon min-h-[10rem] flex justify-center items-center">
               {/* <div className=" bg-slate-300 h-[5rem] w-[5rem] rounded-full"></div> */}
               <img src={img} alt="icon" className=' w-[4.5rem]' />
