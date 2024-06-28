@@ -75,6 +75,10 @@ function App() {
 
   console.log(currentCategory)
 
+  const handleCategory = () => {
+    
+  }
+
 
 
   return (

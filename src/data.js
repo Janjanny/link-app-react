@@ -121,6 +121,7 @@ export async function addBookmark(link, linkCategory) {
 }
 
 
+// function for adding category
 export function addCategory(category) {
     const categories = getCategories();
     categories.push(category);

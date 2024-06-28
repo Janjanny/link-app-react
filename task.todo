@@ -6,6 +6,7 @@ todo
 ✔ add its empty display if bookmark category is empty @started(24-06-28 22:03) @done(24-06-28 22:31) @lasted(28m16s)
 ✔ style is empty display @done(24-06-28 23:43)
 ✔ add footer @done(24-06-29 00:26)
+☐ add category function
 ☐ fix navbar
 ☐ re-style cards
 ☐ responsiveness
