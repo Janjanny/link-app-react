@@ -61,19 +61,20 @@ function App() {
     localStorage.setItem('bookmarks', JSON.stringify(newBookmarks));
 
     updateBookmark();
-    
-    // console.log(index);
-    // console.log("bookmarks", bookmarks);
-    
+
   }
 
 
-  // const sample = [1,2,3,4,5];
-  // const filteredSample = sample.filter((_, i) => i !== 2);
-  // console.log(filteredSample)
 
-  // console.log(localStorage.getItem('bookmark'))
 
+  // category functions
+  const [currentCategory, setCurrentCategory] = useState("All")
+
+  const changeCategory = (category) => {
+    setCurrentCategory(category)
+  }
+
+  console.log(currentCategory)
 
 
 
@@ -81,9 +82,9 @@ function App() {
     <>
       <Navbar />
       <main className=" w-full min-h-screen mx-auto bg-black ">
-        <Categories />
+        <Categories categoryFn={changeCategory} />
         {isNotifActive && <Notification notificationMessage={notification} setNotifActive={setNotifActive}/>}
-        <Bookmarks bookmarks={bookmarks} setBookmarks={setBookmarks} deleteBookmark={deleteBookmark} />
+        <Bookmarks bookmarks={bookmarks} setBookmarks={setBookmarks} deleteBookmark={deleteBookmark} currentCategory={currentCategory} />
         <ActionButton isActive={isActive} setActive={setActive} openLinkModal={openLinkModal} setOpenLinkModal={setOpenLinkModal} openCtgryModal={openCtgryModal} setOpenCtgryModal={setOpenCtgryModal} handleAddBookmark={handleAddBookmark}/>
       </main>
       <Footer />

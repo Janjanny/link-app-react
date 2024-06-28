@@ -2,4 +2,4 @@ todo
 ☐ add url validation for no title available
 ☐ fix the notif window blur bg
 ✔ refactor addBookmark function to add category @done(24-06-28 21:21)
-☐ add filter function in category
+☐ add filter function in category @started(24-06-28 21:25)

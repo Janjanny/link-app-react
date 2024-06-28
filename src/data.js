@@ -21,6 +21,28 @@ const initialBookmarks = [
         image: "https://www.google.com/images/branding/googlelogo/1x/googlelogo_white_background_color_272x92dp.png",
         url: "https://www.google.com/",
         category: "Education"
+    },
+
+    {
+        title: "Amazon",
+        description: "Online shopping from the earth's biggest selection of books, magazines, music, DVDs, videos, electronics, computers, software, apparel & accessories, shoes, jewelry, tools & hardware, housewares, furniture, sporting goods, beauty & personal care, groceries & just about anything else.",
+        image: "https://www.amazon.com/favicon.ico",
+        url: "https://www.amazon.com/",
+        category: "Shopping"
+    },
+    {
+        title: "Steam",
+        description: "Steam is the ultimate destination for playing, discussing, and creating games.",
+        image: "https://store.steampowered.com/favicon.ico",
+        url: "https://store.steampowered.com/",
+        category: "Games"
+    },
+    {
+        title: "Spotify",
+        description: "Music for everyone. Millions of songs and podcasts. No credit card needed.",
+        image: "https://www.scdn.co/i/_global/favicon.png",
+        url: "https://www.spotify.com/",
+        category: "Music"
     }
 ]
 
