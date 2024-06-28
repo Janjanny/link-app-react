@@ -76,7 +76,7 @@ async function metaDataRetrieve(link, linkCategory) {
 // console.log(newBookmark);
 
 // function for adding data 
-export async function addBookmark(link, category) {
+export async function addBookmark(link) {
 
     const {title, description, image, url, category } = await metaDataRetrieve(link, category);
 
