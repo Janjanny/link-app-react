@@ -4,8 +4,8 @@ todo
 ✔ refactor addBookmark function to add category @done(24-06-28 21:21)
 ✔ add filter function in category @started(24-06-28 21:25) @done(24-06-28 21:53) @lasted(28m45s)
 ✔ add its empty display if bookmark category is empty @started(24-06-28 22:03) @done(24-06-28 22:31) @lasted(28m16s)
-☐ style is empty display
-☐ add footer
+✔ style is empty display @done(24-06-28 23:43)
+✔ add footer @done(24-06-29 00:26)
 ☐ fix navbar
 ☐ re-style cards
 ☐ responsiveness

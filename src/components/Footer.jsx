@@ -1,8 +1,86 @@
 import React from 'react'
+import 'boxicons'
 
 const Footer = () => {
   return (
-    <div className=' text-white bg-[#080808] py-[3rem]'>Footer</div>
+    <>
+      <div className=" w-full bg-[#101010] text-white py-[5rem] justify-center items-center overflow-hidden">
+        <div className="footer-container w-11/12 mx-auto flex  justify-between items-center">
+          <div className="text-container">
+            <h1 className=' text-[3rem] font-bold'>Links</h1>
+            <p className='text-sm w-8/12 font-light'>Links is a simple website for saving and organizing your favorite bookmarks.</p>
+          </div>
+          <div className="links-container">
+          <ul className="social-links text-white flex mb-8 gap-[12px] md:gap-[24px]">
+            <li>
+              <a
+                href="https://www.facebook.com/chrisjanbeboso"
+                className=" bg-off-white border border-white p-[8px] rounded-full flex justify-center items-center hover:bg-white hover:border-off-white hover:text-black transition-all  "
+                target="blank"
+              >
+                <box-icon
+                  name="facebook-circle"
+                  type="logo"
+                  color="currentColor"
+                  size="sm"
+                ></box-icon>
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://www.instagram.com/jaaannyyy_/"
+                className=" bg-off-white p-[8px] rounded-full flex justify-center items-center hover:bg-white hover:border-off-white hover:text-black transition-all border border-white "
+                target="blank"
+              >
+                <box-icon
+                  name="instagram-alt"
+                  type="logo"
+                  color="currentColor"
+                  size="sm"
+                ></box-icon>
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://www.linkedin.com/in/chris-jan-beboso-3325b115a/"
+                className=" bg-off-white p-[8px] rounded-full flex justify-center items-center hover:bg-white hover:border-off-white hover:text-black transition-all border border-white "
+                target="blank"
+              >
+                <box-icon
+                  name="linkedin-square"
+                  type="logo"
+                  color="currentColor"
+                  size="sm"
+                ></box-icon>
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://github.com/Janjanny"
+                className=" bg-off-white p-[8px] rounded-full flex justify-center items-center hover:bg-white hover:border-off-white hover:text-black transition-all border border-white "
+                target="blank"
+              >
+                <box-icon
+                  name="github"
+                  type="logo"
+                  color="currentColor"
+                  size="sm"
+                ></box-icon>
+              </a>
+            </li>
+
+            
+          </ul>
+          </div>
+        </div>
+      </div>
+      {/* <div className="copyrights w-full bg-[#101010] text-white p-4 flex justify-center items-center font-body text-[12px] sm:text-sm font-light cursor-default">
+        Copyright @2024. Designed by Chris Jan Beboso
+      </div> */}
+    </>
   )
 }
 

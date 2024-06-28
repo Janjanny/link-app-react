@@ -9,7 +9,7 @@ const Bookmarks = ({bookmarks, setBookmarks, deleteBookmark, currentCategory}) =
 
 
   return (
-    <div className='w-11/12 min-h-screen mx-auto mt-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 col-auto gap-4 pb-[12rem] relative'>
+    <div className='w-11/12  mx-auto mt-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 col-auto gap-4 pb-[12rem] relative'>
 
 
       {bookmarks.filter((bookmark) => currentCategory === "All" || bookmark.category === currentCategory).length === 0 ? (<IsEmpty/>) : bookmarks.filter((bookmark) => currentCategory === "All" || bookmark.category === currentCategory).map((bookmark, index) => (<Card 
