@@ -1,5 +1,13 @@
 todo
 ☐ add url validation for no title available
-☐ fix the notif window blur bg
+✔ fix the notif window blur bg @done(24-06-28 21:58)
 ✔ refactor addBookmark function to add category @done(24-06-28 21:21)
-☐ add filter function in category @started(24-06-28 21:25)
+✔ add filter function in category @started(24-06-28 21:25) @done(24-06-28 21:53) @lasted(28m45s)
+✔ add its empty display if bookmark category is empty @started(24-06-28 22:03) @done(24-06-28 22:31) @lasted(28m16s)
+☐ style is empty display
+☐ add footer
+☐ fix navbar
+☐ re-style cards
+☐ responsiveness
+☐ add gsap
+☐ deploy

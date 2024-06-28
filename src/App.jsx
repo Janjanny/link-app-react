@@ -2,6 +2,7 @@ import ActionButton from "./components/ActionButton";
 import Bookmarks from "./components/Bookmarks";
 import Categories from "./components/Categories";
 import Footer from "./components/Footer";
+import IsEmpty from "./components/IsEmpty";
 import Navbar from "./components/Navbar";
 import Notification from "./components/Notification";
 import { getBookmarks, addBookmark } from "./data";
@@ -65,8 +66,6 @@ function App() {
   }
 
 
-
-
   // category functions
   const [currentCategory, setCurrentCategory] = useState("All")
 
@@ -84,6 +83,7 @@ function App() {
       <main className=" w-full min-h-screen mx-auto bg-black ">
         <Categories categoryFn={changeCategory} />
         {isNotifActive && <Notification notificationMessage={notification} setNotifActive={setNotifActive}/>}
+        {/* <IsEmpty/> */}
         <Bookmarks bookmarks={bookmarks} setBookmarks={setBookmarks} deleteBookmark={deleteBookmark} currentCategory={currentCategory} />
         <ActionButton isActive={isActive} setActive={setActive} openLinkModal={openLinkModal} setOpenLinkModal={setOpenLinkModal} openCtgryModal={openCtgryModal} setOpenCtgryModal={setOpenCtgryModal} handleAddBookmark={handleAddBookmark}/>
       </main>

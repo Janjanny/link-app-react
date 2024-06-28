@@ -1,29 +1,15 @@
 import React, { useEffect, useState } from 'react'
 
 const Notification = ({notificationMessage, setNotifActive}) => {
-  const [scrollPosition, setScrollPosition] = useState({top: 0, left: 0});
-
-  // update scroll position
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollPosition({top: window.scrollY, left: window.scrollX})
-    }
-
-    window.addEventListener('scroll', handleScroll);
-
-    // clean up event listener
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
 
 
-  }, [])
 
   return (
 
     <>
-    <div className=" overflow-hidden">
-    <div className='absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm cursor-pointer z-10 w-screen h-screen' style={{top:`calc(50% + ${scrollPosition.top}px)`, left: `calc(50% + ${scrollPosition.left}px)`, transform: `translate(-50%, -50%)`}} ></div>
+    <div className=" overflow-hidden fixed top-0 left-0 w-screen h-screen flex items-center justify-center z-50">
+      {/* blur bg */}
+    <div className='absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm cursor-pointer z-10 w-screen h-screen' ></div>
     <div className=' text-white absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] z-[11] px-[2.5rem] py-[2.5rem] bg-black-card shadow-md rounded-md flex flex-col justify-center items-center'>
         <h1 className=' text-lg mb-7 flex items-center gap-2'> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" color='text-gray-500' className=" size-10">
   <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
