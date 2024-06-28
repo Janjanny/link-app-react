@@ -1,6 +1,0 @@
-
-- add url validation for no title available
-- fix the notification window the blur bg
-
-- refactor addBookmark function to include category in object
-- add filter function
