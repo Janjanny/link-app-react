@@ -3,7 +3,7 @@ import { resetData } from "../data";
 
 const Navbar = () => {
   return (
-    <div className="w-full bg-black text-white py-3 border-b border-gray border-solid">
+    <div className="w-full bg-black text-white py-3 border-b border-gray border-solid overflow-hidden">
       <nav className="flex w-11/12 mx-auto justify-between items-center py-1">
         <a href="/" className=" font-bold text-3xl">Links</a>
 
