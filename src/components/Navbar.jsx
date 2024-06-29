@@ -16,7 +16,9 @@ const Navbar = () => {
 
   const [isFocused, setIsFocused] = useState(false)
 
-  
+  const element = window.addEventListener('focus', (e) => {
+    
+  })
 
 
 
