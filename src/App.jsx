@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import IsEmpty from "./components/IsEmpty";
 import Navbar from "./components/Navbar";
 import Notification from "./components/Notification";
-import { getBookmarks, addBookmark, addCategory, getCategories } from "./data";
+import { getBookmarks, addBookmark, addCategory, getCategories, removeCategory } from "./data";
 import { useState } from "react";
 
 
@@ -14,6 +14,7 @@ function App() {
   const [isActive, setActive] = useState(false)
   const [openLinkModal, setOpenLinkModal] = useState(false)
   const [openCtgryModal, setOpenCtgryModal] = useState(false);
+  const [openRmvCtgryModal, setOpenRmvCtgryModal] = useState(false)
   const [notification, setNotification] = useState("Test");
   const [isNotifActive, setNotifActive] = useState(false);
   const [categories, setCategories] = useState(getCategories())
@@ -89,6 +90,14 @@ function App() {
 
   }
 
+  const handleRemoveCategory = (category) => {
+    removeCategory(category);
+    updateCategories();
+
+    setNotifActive("Category removed");
+    setNotifActive(true)
+  }
+
 
 
   return (
@@ -99,7 +108,19 @@ function App() {
         {isNotifActive && <Notification notificationMessage={notification} setNotifActive={setNotifActive}/>}
         {/* <IsEmpty/> */}
         <Bookmarks bookmarks={bookmarks} setBookmarks={setBookmarks} deleteBookmark={deleteBookmark} currentCategory={currentCategory} />
-        <ActionButton isActive={isActive} setActive={setActive} openLinkModal={openLinkModal} setOpenLinkModal={setOpenLinkModal} openCtgryModal={openCtgryModal} setOpenCtgryModal={setOpenCtgryModal} handleAddBookmark={handleAddBookmark} handleAddCategory={handleAddCategory}/>
+
+        <ActionButton 
+        isActive={isActive} 
+        setActive={setActive} 
+        openLinkModal={openLinkModal} 
+        setOpenLinkModal={setOpenLinkModal} 
+        openCtgryModal={openCtgryModal} 
+        setOpenCtgryModal={setOpenCtgryModal} 
+        handleAddBookmark={handleAddBookmark} 
+        handleAddCategory={handleAddCategory} 
+        openRmvCtgryModal={openRmvCtgryModal} 
+        setOpenRmvCtgryModal={setOpenRmvCtgryModal} 
+        handleRmvCtgry={handleRemoveCategory}/>
       </main>
       <Footer />
     </>
