@@ -151,3 +151,10 @@ export const resetData = () => {
     localStorage.removeItem('categories');
     window.location.reload()
 }
+
+
+// styles
+export const blueButton = 'fixed bottom-36 right-20 flex justify-center items-center bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 text-sm font-medium py-2 px-4 gap-2 rounded-md cursor-pointer text-white';
+
+export const redButton = 'text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2';
+
