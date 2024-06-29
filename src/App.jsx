@@ -15,7 +15,7 @@ function App() {
   const [openLinkModal, setOpenLinkModal] = useState(false)
   const [openCtgryModal, setOpenCtgryModal] = useState(false);
   const [openRmvCtgryModal, setOpenRmvCtgryModal] = useState(false)
-  const [notification, setNotification] = useState("Test");
+  const [notification, setNotification] = useState("");
   const [isNotifActive, setNotifActive] = useState(false);
   const [categories, setCategories] = useState(getCategories())
 
@@ -94,7 +94,7 @@ function App() {
     removeCategory(category);
     updateCategories();
 
-    setNotifActive("Category removed");
+    setNotification("Category removed");
     setNotifActive(true)
   }
 

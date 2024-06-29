@@ -4,6 +4,7 @@ import { getCategories } from '../data'
 
 const RemoveCategoryModal = ({isActive, setActive, handleRmvCtgry}) => {
     const categoryList = getCategories()
+    
     const [selectedCategory, setSelectedCategory] = useState(categoryList[0])
 
     // console.log(categoryList.indexOf(selectedCategory));

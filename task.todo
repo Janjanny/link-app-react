@@ -7,8 +7,9 @@ todo
 ✔ style is empty display @done(24-06-28 23:43)
 ✔ add footer @done(24-06-29 00:26)
 ✔ add category function @done(24-06-29 20:39)
-☐ add remove category function
+✔ add remove category function @done(24-06-29 21:46)
 ☐ add search function
+☐ fix category all
 ☐ fix navbar
 ☐ re-style cards
 ☐ responsiveness
