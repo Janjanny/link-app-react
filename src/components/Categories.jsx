@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { getCategories } from "../data";
 
 
-const Categories = ({categoryFn}) => {
-  const categoryList = getCategories()
+const Categories = ({categoryFn, categoryList}) => {
+
 
   const[active, setActive] = useState("All");
 

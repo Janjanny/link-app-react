@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import IsEmpty from "./components/IsEmpty";
 import Navbar from "./components/Navbar";
 import Notification from "./components/Notification";
-import { getBookmarks, addBookmark } from "./data";
+import { getBookmarks, addBookmark, addCategory, getCategories } from "./data";
 import { useState } from "react";
 
 
@@ -16,6 +16,7 @@ function App() {
   const [openCtgryModal, setOpenCtgryModal] = useState(false);
   const [notification, setNotification] = useState("Test");
   const [isNotifActive, setNotifActive] = useState(false);
+  const [categories, setCategories] = useState(getCategories())
 
   // check if url valid
   const isValidUrl = (url) => {
@@ -73,10 +74,19 @@ function App() {
     setCurrentCategory(category)
   }
 
-  console.log(currentCategory)
+  // console.log(currentCategory)
 
-  const handleCategory = () => {
-    
+  const updateCategories = () => {
+    setCategories(getCategories())
+  }
+
+  const handleAddCategory = (category) => {
+    addCategory(category);
+    updateCategories();
+
+    setNotification("Category added successfully!")
+    setNotifActive(true)
+
   }
 
 
@@ -85,11 +95,11 @@ function App() {
     <>
       <Navbar />
       <main className=" w-full min-h-screen mx-auto bg-black ">
-        <Categories categoryFn={changeCategory} />
+        <Categories categoryFn={changeCategory} categoryList={categories} />
         {isNotifActive && <Notification notificationMessage={notification} setNotifActive={setNotifActive}/>}
         {/* <IsEmpty/> */}
         <Bookmarks bookmarks={bookmarks} setBookmarks={setBookmarks} deleteBookmark={deleteBookmark} currentCategory={currentCategory} />
-        <ActionButton isActive={isActive} setActive={setActive} openLinkModal={openLinkModal} setOpenLinkModal={setOpenLinkModal} openCtgryModal={openCtgryModal} setOpenCtgryModal={setOpenCtgryModal} handleAddBookmark={handleAddBookmark}/>
+        <ActionButton isActive={isActive} setActive={setActive} openLinkModal={openLinkModal} setOpenLinkModal={setOpenLinkModal} openCtgryModal={openCtgryModal} setOpenCtgryModal={setOpenCtgryModal} handleAddBookmark={handleAddBookmark} handleAddCategory={handleAddCategory}/>
       </main>
       <Footer />
     </>
