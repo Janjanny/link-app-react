@@ -5,14 +5,15 @@ import { getCategories } from '../data'
 const RemoveCategoryModal = ({isActive, setActive, handleRmvCtgry}) => {
     const categoryList = getCategories()
     
-    const [selectedCategory, setSelectedCategory] = useState(categoryList[0])
+    const [selectedCategory, setSelectedCategory] = useState(categoryList[1])
 
     // console.log(categoryList.indexOf(selectedCategory));
 
 
     const handleSubmit = () => {
-        handleRmvCtgry(categoryList.indexOf(selectedCategory));
+        handleRmvCtgry(selectedCategory);
         setActive(!isActive);
+        console.log(selectedCategory)
     }
 
   return (
@@ -23,7 +24,7 @@ const RemoveCategoryModal = ({isActive, setActive, handleRmvCtgry}) => {
         <div className='relative z-10 px-[2.5rem] py-[3rem] bg-black-card text-white rounded-md shadow'>
         <label for="price" class="block text-sm font-medium leading-6 text-gray-900 mb-2">Remove Category</label>
         <select  className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6 text-black pl-3" value={selectedCategory} onChange={(e) => {setSelectedCategory(e.target.value)}}>
-              {categoryList.map((category, index) => (<option key={index}>{category}</option>))}
+              {categoryList.map((category, index) => (category != "All" && <option key={index + 1}>{category}</option> ))}
             </select>
 
         

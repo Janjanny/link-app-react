@@ -91,7 +91,8 @@ function App() {
   }
 
   const handleRemoveCategory = (category) => {
-    removeCategory(category);
+    removeCategory(categories.indexOf(category));
+    console.log(categories.indexOf(category))
     updateCategories();
 
     setNotification("Category removed");
