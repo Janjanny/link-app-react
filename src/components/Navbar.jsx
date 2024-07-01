@@ -9,16 +9,12 @@ const Navbar = () => {
   // console.log(bookmarkList[0].title)
 
   
-  const [searchedBookmark, setSearchedBookmark] = useState(" ")
+  const [searchedBookmark, setSearchedBookmark] = useState("")
   console.log(searchedBookmark)
   
   const regex = RegExp(searchedBookmark.toLowerCase(), 'gi')
 
-  const [isFocused, setIsFocused] = useState(false)
-
-  const element = window.addEventListener('focus', (e) => {
-    
-  })
+ 
 
 
 
@@ -54,7 +50,7 @@ const Navbar = () => {
             </svg>
           </div>
           {/* search result */}
-          {isFocused && <div className="absolute w-full h-content top-[45px] rounded-md overflow-hidden z-30">
+          {searchedBookmark.trim() !== "" && <div className="absolute w-full h-content top-[45px] rounded-md overflow-hidden z-30">
 
           {bookmarkList.map((bookmark) => (regex.test(bookmark.title.toLowerCase()) ? <div className=" border-b pb-[8px] bg-black-card hover:bg-black-card-hover transition-all ease-in p-[1rem]"> <a href={bookmark.url} className="font-bold hover:underline" target="_blank">{bookmark.title}</a>
           <p className="text-xs text-gray cursor-default">{bookmark.description.length <= 28 ? bookmark.description: (bookmark.description.slice(0, 28) + '...')}</p>
