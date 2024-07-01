@@ -1,13 +1,24 @@
 import React from 'react'
 import 'boxicons'
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
+import { useRef } from 'react'
+import ScrollTrigger from 'gsap-trial/ScrollTrigger'
 
 const Footer = () => {
+  gsap.registerPlugin(ScrollTrigger);
+  const container = useRef()
+
+  useGSAP(() => {
+    gsap.to('.footer-title', {scrollTrigger :'.footer-title', x:500, duration:1 })
+  }, {scope:container})
+
   return (
     <>
-      <div className=" w-full bg-[#101010] text-white py-[5rem] justify-center items-center overflow-hidden">
+      <div className="footer w-full bg-[#101010] text-white py-[5rem] justify-center items-center overflow-hidden" ref={container}>
         <div className="footer-container w-11/12 mx-auto flex flex-col md:flex-row  md:justify-between md:items-center ">
           <div className="text-container">
-            <h1 className=' text-[3rem] font-bold text-center md:text-left'>Links</h1>
+            <h1 className='footer-title text-[3rem] font-bold text-center md:text-left'>Links</h1>
             <p className='text-sm md:w-8/12 font-light text-center md:text-left mb-[2rem] md:mb-[0]'>Links is a simple website for saving and organizing your favorite bookmarks.</p>
           </div>
           <div className="links-container flex justify-center md:justify-end">
