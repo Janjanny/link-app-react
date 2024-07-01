@@ -16,10 +16,10 @@ const Bookmarks = ({bookmarks, setBookmarks, deleteBookmark, currentCategory}) =
   useGSAP(() => {
     gsap.from(container.current.children, {
       opacity: 0,
-      y: -50,
+      y: 100,
       duration: 1,
       stagger: 0.1,
-      ease: "power2.out"})
+      ease: "power2.out",})
   }, {scope:container})
 
 
