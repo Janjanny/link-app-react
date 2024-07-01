@@ -5,12 +5,12 @@ const Footer = () => {
   return (
     <>
       <div className=" w-full bg-[#101010] text-white py-[5rem] justify-center items-center overflow-hidden">
-        <div className="footer-container w-11/12 mx-auto flex  justify-between items-center">
+        <div className="footer-container w-11/12 mx-auto flex flex-col md:flex-row  md:justify-between md:items-center ">
           <div className="text-container">
-            <h1 className=' text-[3rem] font-bold'>Links</h1>
-            <p className='text-sm w-8/12 font-light'>Links is a simple website for saving and organizing your favorite bookmarks.</p>
+            <h1 className=' text-[3rem] font-bold text-center md:text-left'>Links</h1>
+            <p className='text-sm md:w-8/12 font-light text-center md:text-left mb-[2rem] md:mb-[0]'>Links is a simple website for saving and organizing your favorite bookmarks.</p>
           </div>
-          <div className="links-container">
+          <div className="links-container flex justify-center md:justify-end">
           <ul className="social-links text-white flex mb-8 gap-[12px] md:gap-[24px]">
             <li>
               <a

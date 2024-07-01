@@ -10,8 +10,8 @@ todo
 ✔ add remove category function @done(24-06-29 21:46)
 ✔ add search function @done(24-07-01 20:42)
 ✔ fix category all @done(24-07-01 21:00)
-☐ fix navbar
-☐ re-style cards
-☐ responsiveness
+✔ fix navbar @done(24-07-01 21:19)
+✔ re-style cards @done(24-07-01 21:20)
+✔ responsiveness @done(24-07-01 21:28)
 ☐ add gsap
 ☐ deploy

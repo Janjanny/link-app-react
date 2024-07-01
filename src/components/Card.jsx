@@ -6,7 +6,7 @@ const Card = ({name, desc, link, img, deleteBookmark, index}) => {
 
   return (
     <>
-        <div className=' bg-black-card w-full text-white min-h-[18rem] p-6 rounded-lg relative'>
+        <a href={link} target='_blank'><div className=' bg-black-card w-full text-white min-h-[18rem] p-6 rounded-lg relative hover:bg-black-card-hover transition-all ease-in'>
           <button className="delete-icon absolute right-[1.5rem]" onClick={() => deleteBookmark(index)}>
 
           
@@ -24,7 +24,7 @@ const Card = ({name, desc, link, img, deleteBookmark, index}) => {
                 <a href={link} target='_blank' className=' hover:underline'><h1 className=' font-bold'>{name.length <= 25 ? name : name.slice(0, 25) + '...'}</h1></a>
                 <p className=' text-xs font-light text-gray-hover mt-1 cursor-default'>{desc.length <= 50 ? desc : desc.slice(0, 81) + '...'}</p>
             </div>
-        </div>
+        </div></a>
     </>
   )
 }
