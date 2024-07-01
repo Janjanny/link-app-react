@@ -4,6 +4,14 @@ import CategoryModal from './CategoryModal'
 import { addBookmark, blueButton } from '../data'
 import RemoveCategoryModal from './RemoveCategoryModal'
 
+import { useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(useGSAP);
+
+const container = useRef();
+
 const ActionButton = ({isActive, setActive, openLinkModal, setOpenLinkModal, openCtgryModal, setOpenCtgryModal, handleAddBookmark, handleAddCategory, openRmvCtgryModal, setOpenRmvCtgryModal, handleRmvCtgry}) => {
 
 
