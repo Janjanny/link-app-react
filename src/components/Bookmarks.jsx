@@ -8,12 +8,14 @@ import { useGSAP } from '@gsap/react';
 import { useRef } from 'react'
 
 
+
 const Bookmarks = ({bookmarks, setBookmarks, deleteBookmark, currentCategory}) => {
   gsap.registerPlugin(useGSAP);
 
   const container = useRef();
 
   useGSAP(() => {
+    
     gsap.from(container.current.children, {
       opacity: 0,
       y: 100,
@@ -22,6 +24,7 @@ const Bookmarks = ({bookmarks, setBookmarks, deleteBookmark, currentCategory}) =
       ease: "power2.out",})
   }, {scope:container})
 
+  // console.log(container.current.children)
 
   return (
     <div className='w-11/12  mx-auto mt-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 col-auto gap-4 pb-[12rem] relative' ref={container}>

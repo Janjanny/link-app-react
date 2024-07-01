@@ -3,15 +3,14 @@ import 'boxicons'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { useRef } from 'react'
-import ScrollTrigger from 'gsap-trial/ScrollTrigger'
 
 const Footer = () => {
-  gsap.registerPlugin(ScrollTrigger);
+  // gsap.registerPlugin(ScrollTrigger);
   const container = useRef()
 
-  useGSAP(() => {
-    gsap.to('.footer-title', {scrollTrigger :'.footer-title', x:500, duration:1 })
-  }, {scope:container})
+  // useGSAP(() => {
+  //   gsap.to('.footer-title', {x: 0, opacity: 0, scrollTrigger:{trigger: '.footer-title'}})
+  // }, {scope:container})
 
   return (
     <>
