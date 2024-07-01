@@ -10,7 +10,7 @@ const Navbar = () => {
 
   
   const [searchedBookmark, setSearchedBookmark] = useState("")
-  console.log(searchedBookmark)
+  // console.log(searchedBookmark)
   
   const regex = RegExp(searchedBookmark.toLowerCase(), 'gi')
 

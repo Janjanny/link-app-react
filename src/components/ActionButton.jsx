@@ -8,31 +8,62 @@ import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
-gsap.registerPlugin(useGSAP);
 
-const container = useRef();
+
+
 
 const ActionButton = ({isActive, setActive, openLinkModal, setOpenLinkModal, openCtgryModal, setOpenCtgryModal, handleAddBookmark, handleAddCategory, openRmvCtgryModal, setOpenRmvCtgryModal, handleRmvCtgry}) => {
 
+  gsap.registerPlugin(useGSAP);
 
-    const buttonClicked = () => {
-        setActive(!isActive);
+  const container = useRef();
+  const iconRef = useRef();
+  const tl = useRef();
+
+
+
+
+
+  useGSAP(() => {
+    tl.current = gsap.timeline({paused: true}).to(iconRef.current, {rotation: -135, duration: .5})
+    gsap.fromTo('.actionButton', {y: 100, opacity: 0, duration: 1}, {y: -5, opacity: 1, duration: 1})
+    
+  
+  }, {scope:container})
+
+  const buttonClicked = () => {
+    if (isActive) {
+      tl.current.reverse();
+    } else {
+      tl.current.play();
     }
+    setActive(!isActive);
+
+  }
+
+    // const buttonClicked = () => {
+    //     setActive(!isActive);
+    // }
 
     // console.log(isActive)
   return (
     <>
     
-    <div className='text-white cursor-pointer fixed bottom-10 right-10 w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 flex justify-center items-center bg-center bg-no-repeat' onClick={() => {buttonClicked()}}>
-        {!isActive ? <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="size-6">
+    <div ref={container}>
+    <div className='actionButton text-white cursor-pointer fixed bottom-10 right-10 w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 flex justify-center items-center bg-center bg-no-repeat opacity-100 ' onClick={() => {buttonClicked()}}>
+        {/* {!isActive ? <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="size-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
         </svg> : <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="size-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
 </svg>
-}
+} */}
+
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="size-6 cross-icon" ref={iconRef}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+        </svg> 
     </div>
     {isActive && <>
-        <div className='fixed bottom-24 right-20 flex justify-center items-center bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 text-sm font-medium py-2 px-4 gap-[0.4rem] rounded-md cursor-pointer text-white' onClick={() => {setOpenLinkModal(!openLinkModal)}}>Add Link <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className=" size-5">
+        <div className='option-button fixed bottom-24 right-20 flex justify-center items-center bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 text-sm font-medium py-2 px-4 gap-[0.4rem] rounded-md cursor-pointer text-white' onClick={() => {setOpenLinkModal(!openLinkModal)}}>Add Link <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className=" size-5">
   <path strokeLinecap="round" strokeLinejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
 </svg>
 </div>
@@ -57,6 +88,8 @@ const ActionButton = ({isActive, setActive, openLinkModal, setOpenLinkModal, ope
     
     {openRmvCtgryModal && <RemoveCategoryModal isActive={openRmvCtgryModal} setActive={setOpenRmvCtgryModal} handleRmvCtgry={handleRmvCtgry} />}
 
+
+    </div>
     </>
   )
 }
