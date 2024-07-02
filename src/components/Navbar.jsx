@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { getCategories, resetData } from "../data";
 import { getBookmarks } from "../data";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Navbar = () => {
 
@@ -14,6 +16,11 @@ const Navbar = () => {
   
   const regex = RegExp(searchedBookmark.toLowerCase(), 'gi')
 
+  useGSAP(() => {
+    gsap.from(".title", {opacity: 0, x: -50, duration: .9});
+    gsap.from(".search-bar", {opacity: 0, x: 50, duration: .9})
+  })
+
  
 
 
@@ -21,12 +28,12 @@ const Navbar = () => {
   return (
     <div className="w-full bg-black text-white py-3 border-b border-gray border-solid">
       <nav className="flex w-11/12 mx-auto justify-between items-center py-1 ">
-        <a href="/" className=" font-bold text-3xl">Links</a>
+        <a href="/" className=" font-bold text-3xl title">Links</a>
 
-        <button className="absolute top-[50%] left-[50%] z-[999] bg-red-600 py-2 px-3" onClick={() => resetData()}>reset</button>
+        {/* <button className="absolute top-[50%] left-[50%] z-[999] bg-red-600 py-2 px-3" onClick={() => resetData()}>reset</button> */}
         <div className="flex gap-3 relative">
           {/* search bar */}
-          <div className="flex border-solid border border-gray py-2 px-4 text-sm rounded-3xl">
+          <div className="flex border-solid border border-gray py-2 px-4 text-sm rounded-3xl search-bar">
             <input
               type="text"
               className=" bg-black focus:outline-none outline-1 text-start text-sm w-[150px] md:w-[250px]"

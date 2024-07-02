@@ -3,25 +3,31 @@ import 'boxicons'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { useRef } from 'react'
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+
+gsap.registerPlugin(ScrollTrigger);
 const Footer = () => {
-  // gsap.registerPlugin(ScrollTrigger);
-  const container = useRef()
+  
+  const scrollRef = useRef();
 
-  // useGSAP(() => {
-  //   gsap.to('.footer-title', {x: 0, opacity: 0, scrollTrigger:{trigger: '.footer-title'}})
-  // }, {scope:container})
+  useGSAP(() => {
+    gsap.from('.left-div', {opacity: 0, x: -80, duration: .8, scrollTrigger: {trigger: '.footer', start: 'bottom, bottom', end: 'top 20%'}, ease: 'power1.in'})
+    gsap.from('.right-div', {opacity: 0, x: 80, duration: .8, scrollTrigger: {trigger: '.footer', start: 'bottom, bottom', end: 'top 20%'}, ease: 'power1.in'})
+    
+  }, [])
+
 
   return (
     <>
-      <div className="footer w-full bg-[#101010] text-white py-[5rem] justify-center items-center overflow-hidden" ref={container}>
+      <div className="footer w-full bg-[#101010] text-white py-[5rem] justify-center items-center overflow-hidden" ref={scrollRef} >
         <div className="footer-container w-11/12 mx-auto flex flex-col md:flex-row  md:justify-between md:items-center ">
-          <div className="text-container">
+          <div className="text-container left-div">
             <h1 className='footer-title text-[3rem] font-bold text-center md:text-left'>Links</h1>
             <p className='text-sm md:w-8/12 font-light text-center md:text-left mb-[2rem] md:mb-[0]'>Links is a simple website for saving and organizing your favorite bookmarks.</p>
           </div>
           <div className="links-container flex justify-center md:justify-end">
-          <ul className="social-links text-white flex mb-8 gap-[12px] md:gap-[24px]">
+          <ul className="social-links text-white flex mb-8 gap-[12px] md:gap-[24px] right-div">
             <li>
               <a
                 href="https://www.facebook.com/chrisjanbeboso"

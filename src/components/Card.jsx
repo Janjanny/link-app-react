@@ -1,12 +1,18 @@
+import { useGSAP } from '@gsap/react'
 import React from 'react'
+import gsap from 'gsap'
 
 
 const Card = ({name, desc, link, img, deleteBookmark, index}) => {
+
+  useGSAP(() => {
+    gsap.fromTo(".stagger-card", {opacity: 0, }, {opacity: 1, y: 0, duration: 1, ease:'ease'})
+  })
     
 
   return (
     <>
-        <div className=' bg-black-card w-full text-white min-h-[18rem] p-6 rounded-lg relative hover:bg-black-card-hover transition-all ease-in'>
+        <div className=' bg-black-card w-full text-white min-h-[18rem] p-6 rounded-lg relative hover:bg-black-card-hover transition-all ease-in stagger-card'>
           <button className="delete-icon absolute right-[1.5rem]" onClick={() => deleteBookmark(index)}>
 
           
